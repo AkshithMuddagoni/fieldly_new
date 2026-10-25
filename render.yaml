@@ -1,0 +1,20 @@
+# Optional: only used if you create a Render "Blueprint". Your existing web service works without it.
+# ONE service serves the API and the website. The old frontend Static Site is no longer needed.
+services:
+  - type: web
+    name: fieldly
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python seed.py && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_KEY
+        generateValue: true
