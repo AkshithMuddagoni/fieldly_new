@@ -33,3 +33,10 @@ Passwords and keys belong only in the Render dashboard or a local `.env` file (g
 - Without `JWT_SECRET` the app uses a temporary one (logins reset on restart). Without `ADMIN_KEY` admin endpoints stay locked.
 - Still simulated: payments, chat, live map tracking, push notifications, document upload.
 - Rebuild the website after UI changes: `cd frontend && npm install && npm run build`, then commit `backend/app/web`.
+
+
+render fieldly-API   ==  https://fieldly-ihsr.onrender.com/
+
+ fieldly == supabase
+
+postgresql://postgres.vufkdebbysbippzzzntb:SZA97WYEYVVoBVVW@aws-0-ap-south-1.pooler.supabase.com:5432/postgres
